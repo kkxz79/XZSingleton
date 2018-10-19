@@ -11,6 +11,11 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface XZSingletonManager : NSObject
+/**
+ 单例类方法
+ @return 返回一个共享对象
+ */
++(instancetype)sharedInstance;
 
 @end
 

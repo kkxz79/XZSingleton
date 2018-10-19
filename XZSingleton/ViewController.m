@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "XZSingletonManager.h"
 
 @interface ViewController ()
 
@@ -16,8 +17,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    [self testCode];
 }
 
+-(void)testCode
+{
+    //对象1
+    XZSingletonManager * singleOne = [XZSingletonManager new];
+    //对象2
+    XZSingletonManager * singleTwo = [XZSingletonManager sharedInstance];
+    //对象3
+    XZSingletonManager * singleThree = [XZSingletonManager new];
+    //对象4
+    XZSingletonManager * singleFour = [XZSingletonManager sharedInstance];
+    
+    NSLog(@"one = %@\n two = %@\n three = %@\n four = %@",singleOne,singleTwo,singleThree,singleFour);
+}
 
 @end

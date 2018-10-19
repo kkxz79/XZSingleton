@@ -9,5 +9,14 @@
 #import "XZSingletonManager.h"
 
 @implementation XZSingletonManager
++(instancetype)sharedInstance
+{
+    static XZSingletonManager * singleton = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        singleton = [[XZSingletonManager alloc] init];
+    });
+    return singleton;
+}
 
 @end
